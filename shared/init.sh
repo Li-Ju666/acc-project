@@ -4,7 +4,7 @@ tar xvf cloudnaca.tgz && tar xvf navier_stokes_solver.tar
 cd navier_stokes_solver/src && ./compile_forms
 cd .. && cmake . && make -j 2
 echo "Make --- finished"
-cd ../cloudnaca && sudo apt-get update 
+cd ../cloudnaca && sudo apt-get update && sudo dpkg --configure -a
 echo "apt-get updated"
 sudo apt-get install -y gmsh && sudo apt install -y python-numpy
 ./runme.sh 0 30 10 200 3 && cd ./msh 
