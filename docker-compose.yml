@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  worker:
+    image: quay.io/fenicsproject/stable:current
+    volumes:
+      - ./shared:/home/fenics/shared
+    working_dir: /home/fenics/shared
+    command:
+      - ./init.sh
