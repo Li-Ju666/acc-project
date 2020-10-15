@@ -1,0 +1,14 @@
+#cloud-config
+
+apt_update: true
+apt_upgrade: false
+byobu_default: system
+
+runcmd:
+ - sudo apt -y install docker-compose
+ - sudo apt -y install git
+ - git clone https://github.com/Li-Ju666/acc-project.git
+ - cd acc-project/src
+ - ip addr show | grep -o 192.*.*.*/
+ - sudo docker-compose -f rmq.yml up
+
